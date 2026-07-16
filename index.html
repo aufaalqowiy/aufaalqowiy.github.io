@@ -9,15 +9,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  /* ===== base ===== */
   html, body { background-color: #0a0a0a; }
   body { font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif; }
 
-  /* ===== typography roles used by the source (caption / body) ===== */
   .caption { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; }
   .body { font-size: 0.95rem; line-height: 1.6; }
 
-  /* ===== 12-column grid, same as the site's "grid-layout" / "grid-gap" utility ===== */
   .grid-layout {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -29,20 +26,17 @@
   .max-w-8xl { max-width: 90rem; }
   .main-bg { background-color: #111111; }
 
-  /* subtle dot-grid texture like the footer */
   .dot-grid {
     background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
     background-size: 16px 16px;
   }
 
-  /* ===== links: exact classes/behavior from the site source ===== */
   .dotted-underline { border-bottom: 1px dotted currentColor; }
   a.dotted-underline { text-decoration: none; }
 
-  /* ===== project card border, mirrors reference "game-border" ===== */
   .game-border {
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 0.375rem;
+    border-radius: 0;
     transition: opacity 0.2s ease, border-color 0.2s ease;
   }
   .game-border:hover { border-color: rgba(255,255,255,0.18); }
@@ -52,7 +46,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0.375rem;
+    border-radius: 0; 
     overflow: hidden;
     position: relative;
   }
@@ -70,71 +64,66 @@
     font-weight: 600;
   }
 
-  /* baris pertama sejajar; stagger di baris berikutnya muncul natural
-     karena aspect-ratio thumbnail tiap kartu berbeda (4/3 vs 4/5) */
+  .magnetic {
+    display: inline-block;
+    transition: transform 0.15s ease-out;
+    will-change: transform;
+  }
 </style>
 </head>
 <body class="text-white">
 
-<!-- ============ HEADER ============ -->
 <div class="w-full flex items-center flex-col z-[200] border-neutral-800 border-b border-solid">
   <div class="z-10 w-full h-full bg-[#111111] justify-center flex">
     <div class="flex relative flex-col px-3 pb-8 w-full shadow-xl max-w-8xl z-[9]">
 
-      <!-- name / role / location -->
       <nav class="text-white body grid-layout sticky top-0 z-[100] main-bg py-4 border-solid border-b transition-opacity duration-300 border-white/[.06]">
         <a class="col-span-4 col-start-1 hover:text-yellow-300" href="/"><h1 class="font-bold">Aufa Alqowiy</h1></a>
         <p class="col-span-6 md:col-start-7 lg:col-start-7 duration-500 md:col-span-3 lg:col-span-2 transition-opacity font-bold">Fresh Graduate</p>
         <p class="hidden col-span-3 lg:inline md:col-start-9 font-bold">Jambi, Indonesia</p>
       </nav>
 
-      <!-- about / focus / resources -->
       <section class="my-6 md:my-8 grid-layout">
 
-        <!-- ABOUT -->
         <div class="flex flex-col col-start-1 col-end-13 md:col-end-6">
           <p class="text-white opacity-40 caption mb-2">ABOUT</p>
           <p class="col-start-1 col-end-13 mb-4 text-white body md:col-start-1 md:mb-0">
             I am a software developer and data enthusiast focused on building functional digital solutions. With a solid foundation in developing multi-user information systems, cross-platform mobile applications using Flutter, and implementing Natural Language Processing (NLP) for sentiment analysis research, I bridge the gap between structured data and practical user experiences. I combine technical execution with clean design to build software that works efficiently.
-            <a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="mailto:aufa.alqowiy@gmail.com">get in touch</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup>.
+            <a class="magnetic cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="mailto:aufaalqowiy@gmail.com">Get in touch</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup>.
           </p>
         </div>
 
-        <!-- FOCUS -->
         <span class="body text-white col-start-1 col-end-7 md:col-end-9 md:col-start-7 flex flex-col items-start">
           <p class="text-white opacity-40 caption mb-2">Focus</p>
           <span class="translate-x-[-2px]">
-            <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="#">Software and Web Dev</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
-            <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="#">Mobile App Dev</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
-            <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="#">Data Science and NLP</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
-            <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="#">Graphic Design</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
+            <p class="font-bold px-[2px]">Software and Web Dev</p>
+            <p class="font-bold px-[2px]">Mobile App Dev</p>
+            <p class="font-bold px-[2px]">Data Science and NLP</p>
+            <p class="font-bold px-[2px]">Graphic Design</p>
           </span>
         </span>
 
-        <!-- RESOURCES -->
         <span class="body text-white col-start-7 col-end-13 md:col-start-9 flex flex-col items-start">
           <p class="text-white opacity-40 caption mb-2">Resources</p>
           <span class="translate-x-[-2px]">
-            <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/aufaalqowiy/">Curriculum Vitae</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
-            <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="https://www.instagram.com/aufaalqowiy/">Certifications</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
-            <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="https://x.com/alqowiysaka">Thesis</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
-            <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="https://x.com/alqowiysaka">Internship Report</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
+            <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="https://drive.google.com/drive/folders/1a9Biv6PdlX6SGFNCsBxT7z3A3_VjIDVh?usp=sharing">Curriculum Vitae</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
+            <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="https://drive.google.com/drive/folders/1BRgRA_S9QqE6ubBIyeWPVYtMfSRZj71d?usp=drive_link">Certifications</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
+            <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="https://drive.google.com/drive/folders/1hRIkftHn1LJaMma-sZ9cK8hie9c-VTxs?usp=drive_link">Thesis</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
+            <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="https://drive.google.com/drive/folders/1zyTKvHLGVBJHrm8-zfoJCgpcFnNrSxN5?usp=drive_link">Internship Report</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
           </span>
         </span>
 
       </section>
 
-      <!-- ============ PROJECTS GRID ============ -->
       <main>
-        <section class="w-full grid grid-cols-12 grid-gap relative z-10 max-w-8xl">
+        <section class="w-full grid grid-cols-12 gap-4 relative z-10 max-w-8xl">
           <div class="col-start-1 col-end-13 mb-2">
             <p class="text-white opacity-40 caption">Projects</p>
           </div>
 
-          <div class="grid relative z-10 col-start-1 col-end-13 md:grid-cols-3 grid-gap">
+          <div class="grid relative z-10 col-start-1 col-end-13 md:grid-cols-3 gap-4">
 
-            <!-- ===== KOLOM KIRI: apotek -> sentimen svm -> desain grafis ===== -->
-            <div class="flex flex-col gap-6">
+            <div class="flex flex-col gap-4">
 
               <a href="#" class="cursor-pointer relative grid w-full inline-block select-none group">
                 <div class="relative game-border group-hover:opacity-80">
@@ -177,8 +166,7 @@
 
             </div>
 
-            <!-- ===== KOLOM TENGAH: app notes -> app percetakan -> ai bot telegram ===== -->
-            <div class="flex flex-col gap-6">
+            <div class="flex flex-col gap-4">
 
               <a href="#" class="cursor-pointer relative grid w-full inline-block select-none group">
                 <div class="relative game-border group-hover:opacity-80">
@@ -221,8 +209,7 @@
 
             </div>
 
-            <!-- ===== KOLOM KANAN: ramah tamah -> sentimen svm & nbc ===== -->
-            <div class="flex flex-col gap-6">
+            <div class="flex flex-col gap-4">
 
               <a href="#" class="cursor-pointer relative grid w-full inline-block select-none group">
                 <div class="relative game-border group-hover:opacity-80">
@@ -260,19 +247,16 @@
   </div>
 </div>
 
-<!-- ============ FOOTER ============ -->
 <footer class="flex flex-col items-center body bg-[#1C1C1C] dot-grid z-[1] w-full text-zinc-100 mt-12 font-bold">
-  <section class="w-full grid grid-cols-12 grid-gap relative z-10 max-w-8xl pb-16 pt-4 px-3 gap-y-8">
+  <section class="w-full grid grid-cols-12 gap-4 relative z-10 max-w-8xl pb-16 pt-4 px-3 gap-y-8">
 
-    <!-- version / last updated -->
     <div class="flex-col space-y-2 col-start-1 col-end-13 caption md:col-start-1 md:col-end-6">
       <span class="flex flex-row space-x-2 align-middle">
-        <p class="self-center w-min px-2 pt-1 pb-[2px] font-mono lowercase text-yellow-300 border-yellow-300 border border-solid rounded-full">v1.2</p>
-        <p class="self-center px-2 pt-1 pb-[2px] font-mono uppercase text-zinc-600">Last updated 2026-07-15</p>
+        <p class="self-center w-min px-2 pt-1 pb-[2px] font-mono lowercase text-yellow-300 border-yellow-300 border border-solid rounded-full">v1.0</p>
+        <p class="self-center px-2 pt-1 pb-[2px] font-mono uppercase text-zinc-600">Last updated 2026-07-16</p>
       </span>
     </div>
 
-    <!-- links -->
     <span class="flex flex-col space-y-1 col-start-1 col-end-13 md:col-start-7 md:col-end-9">
       <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/aufaalqowiy/">Linkedin</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
       <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="https://www.instagram.com/aufaalqowiy/">Instagram</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
@@ -280,14 +264,27 @@
       <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="https://github.com/aufaalqowiy">Github</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
     </span>
 
-    <!-- contact -->
     <div class="flex flex-col space-y-1 col-start-1 col-end-13 md:col-start-9">
       <p>Let's build something together.</p>
-      <span><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="mailto:aufaalqowiy@gmail.com">aufaalqowiy@gmail.com</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></span>
+      <span><a class="magnetic cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="mailto:aufaalqowiy@gmail.com">aufaalqowiy@gmail.com</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></span>
     </div>
 
   </section>
 </footer>
+
+<script>
+  document.querySelectorAll('.magnetic').forEach(function (el) {
+    el.addEventListener('mousemove', function (e) {
+      var rect = el.getBoundingClientRect();
+      var relX = e.clientX - rect.left - rect.width / 2;
+      var relY = e.clientY - rect.top - rect.height / 2;
+      el.style.transform = 'translate(' + relX * 0.35 + 'px, ' + relY * 0.35 + 'px)';
+    });
+    el.addEventListener('mouseleave', function () {
+      el.style.transform = 'translate(0px, 0px)';
+    });
+  });
+</script>
 
 </body>
 </html>

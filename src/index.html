@@ -15,11 +15,7 @@
   <div class="z-10 w-full h-full main-bg justify-center flex">
     <div class="flex relative flex-col px-3 pb-6 w-full shadow-xl max-w-8xl z-[9]">
 
-            <nav class="text-white body-text grid-layout sticky top-0 z-[100] main-bg py-4 border-solid border-b transition-opacity duration-300 border-white/[.06]">
-        <a class="col-span-4 col-start-1 hover:text-yellow-300" href="/"><h1 class="font-bold">Aufa Alqowiy</h1></a>
-        <p class="col-span-6 md:col-start-7 lg:col-start-7 duration-500 md:col-span-3 lg:col-span-2 transition-opacity font-bold">Fresh Graduate</p>
-        <p class="hidden col-span-3 lg:inline md:col-start-9 font-bold">Jambi, Indonesia</p>
-      </nav>
+      <!-- @include: partials/nav-home.html -->
 
       <section class="my-4 md:my-6 grid-layout">
 
@@ -170,30 +166,7 @@
   </div>
 </div>
 
-<footer class="flex flex-col items-center body-text bg-footer dot-grid z-[1] w-full sticky bottom-0 text-zinc-100 font-bold">
-  <section class="w-full grid grid-cols-12 gap-4 relative z-10 max-w-8xl pb-16 pt-4 px-3 gap-y-8">
-
-    <div class="flex-col space-y-2 col-start-1 col-end-13 caption md:col-start-1 md:col-end-6">
-      <span class="flex flex-row space-x-2 align-middle">
-        <p class="self-center w-min px-2 pt-1 pb-[2px] font-mono lowercase text-yellow-300 border-yellow-300 border border-solid rounded-full">v1.1</p>
-        <p class="self-center px-2 pt-1 pb-[2px] font-mono uppercase text-zinc-600">Last updated 2026-07-19</p>
-      </span>
-    </div>
-
-    <span class="flex flex-col space-y-1 col-start-1 col-end-13 md:col-start-7 md:col-end-9">
-      <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/aufaalqowiy/">Linkedin</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
-      <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="https://www.instagram.com/aufaalqowiy/">Instagram</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
-      <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="https://x.com/alqowiysaka">Twitter</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
-      <p><a class="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="https://github.com/aufaalqowiy">Github</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></p>
-    </span>
-
-    <div class="flex flex-col space-y-1 col-start-1 col-end-13 md:col-start-9">
-      <p>Let's build something together.</p>
-      <span><a class="magnetic cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline" target="_blank" rel="noreferrer" href="mailto:aufaalqowiy@gmail.com">aufaalqowiy@gmail.com</a><sup class="font-sans leading-[0] text-[10px] font-light text-yellow-300">↗</sup></span>
-    </div>
-
-  </section>
-</footer>
+<!-- @include: partials/footer.html -->
 
 <script>
   document.querySelectorAll('.magnetic').forEach(function (el) {

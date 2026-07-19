@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-web",
+  "version": "1.0.0",
+  "description": "Portfolio website - Aufa Alqowiy",
+  "scripts": {
+    "build:html": "node scripts/build-html.js",
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "build": "npm run build:html && npm run build:css",
+    "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.13"
+  }
+}

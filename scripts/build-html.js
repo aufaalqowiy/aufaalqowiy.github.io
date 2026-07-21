@@ -1,10 +1,3 @@
-// Simple include-processor: reads templates under src/*.html and src/projects/*.html,
-// replaces markers like:  <!-- @include: partials/footer.html -->
-// with the content of that partial file, then writes the compiled result to the
-// matching output path at the project root (e.g. src/index.html -> index.html).
-//
-// Usage: node scripts/build-html.js
-
 const fs = require("fs");
 const path = require("path");
 

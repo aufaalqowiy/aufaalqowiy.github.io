@@ -64,8 +64,6 @@
     border-color: rgba(255, 255, 255, 0.18);
   }
 
-  /* thumbnail box: height follows each project's own image/aspect class (set per-card in HTML),
-     not a fixed uniform size — this keeps the organic, varied-height masonry look */
   .thumb {
     width: 100%;
     display: flex;

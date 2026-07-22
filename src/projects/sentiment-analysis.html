@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Analisis Sentimen Quick Count Pemilu 2024 — Aufa Alqowiy</title>
+<title>Analisis Sentimen</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -52,7 +52,7 @@
             <p class="text-white body-text">Python</p>
           </div>
 
-          <a target="_blank" href="#" rel="noreferrer" class="md:col-start-5 md:col-end-9 select-none caption group text-white/80 bg-white/[.05] col-span-full hover:bg-white/10 hover:text-white flex items-center flex-row p-4 game-border">
+          <a target="_blank" href="https://github.com/aufaalqowiy/alq-analisis-sentimen-nbc-svm" rel="noreferrer" class="md:col-start-5 md:col-end-9 select-none caption group text-white/80 bg-white/[.05] col-span-full hover:bg-white/10 hover:text-white flex items-center flex-row p-4 game-border">
             <p>Repo GitHub</p>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="h-3 w-3 ml-auto stroke-[3px] stroke-white/30 group-hover:stroke-white">
               <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
@@ -61,29 +61,29 @@
 
           <div class="col-start-1 col-end-13 mt-8 md:col-start-5">
             <div class="w-full aspect-video border border-white/10 overflow-hidden">
-              <img class="w-full h-full object-cover" src="../images/sentiment-analysis/distribusi-sentimen.jpg" alt="Distribusi sentimen">
+              <img class="w-full h-full object-cover" src="../images/sentiment-analysis/sen-1.jpg" alt="Alur dan distribusi">
             </div>
           </div>
           <div class="grid-gap col-start-1 col-end-13 mb-2 mt-2 text-white md:col-start-5 md:col-end-13 lg:col-end-12">
-            <p class="opacity-60 caption">Distribusi sentimen positif, negatif, dan netral pada dataset.</p>
+            <p class="text-white body-text">Tahapan penelitian mulai dari scraping data, preprocessing, pelabelan, hingga evaluasi model. Dataset 8.000 tweet terkait Quick Count Pemilu 2024 diseimbangkan menggunakan SMOTE agar distribusi kelas negatif, positif, dan netral lebih merata sebelum pelatihan model.</p>
           </div>
 
           <div class="col-start-1 col-end-13 mt-4 md:col-start-5">
             <div class="w-full aspect-video border border-white/10 overflow-hidden">
-              <img class="w-full h-full object-cover" src="../images/sentiment-analysis/confusion-matrix.jpg" alt="Confusion matrix">
+              <img class="w-full h-full object-cover" src="../images/sentiment-analysis/sen-2.jpg" alt="Confusion matrix">
             </div>
           </div>
           <div class="grid-gap col-start-1 col-end-13 mb-2 mt-2 text-white md:col-start-5 md:col-end-13 lg:col-end-12">
-            <p class="opacity-60 caption">Confusion matrix perbandingan Naive Bayes vs SVM.</p>
+            <p class="text-white body-text">Confusion matrix hasil klasifikasi Naive Bayes dan SVM. SVM menunjukkan jumlah prediksi benar yang lebih tinggi di tiap kelas (negatif, netral, positif) dibanding Naive Bayes, terutama pada kelas positif.</p>
           </div>
 
           <div class="col-start-1 col-end-13 mt-4 md:col-start-5">
             <div class="w-full aspect-video border border-white/10 overflow-hidden">
-              <img class="w-full h-full object-cover" src="../images/sentiment-analysis/perbandingan-akurasi.jpg" alt="Perbandingan akurasi">
+              <img class="w-full h-full object-cover" src="../images/sentiment-analysis/sen-3.jpg" alt="Perbandingan performa">
             </div>
           </div>
           <div class="grid-gap col-start-1 col-end-13 mb-2 mt-2 text-white md:col-start-5 md:col-end-13 lg:col-end-12">
-            <p class="opacity-60 caption">Perbandingan akurasi, precision, recall, dan F1-score kedua algoritma.</p>
+            <p class="text-white body-text">SVM unggul di seluruh metrik evaluasi dengan akurasi 75,29% dibanding Naive Bayes 65,76%, begitu juga pada precision, recall, F1-score, dan nilai AUC/ROC di setiap kelas sentimen.</p>
           </div>
 
         </section>
